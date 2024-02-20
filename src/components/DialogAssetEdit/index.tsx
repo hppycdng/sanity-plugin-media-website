@@ -62,8 +62,10 @@ const DialogAssetEdit = (props: Props) => {
   const generateDefaultValues = useCallback(
     (asset?: Asset): AssetFormData => {
       return {
-        altText: asset?.altText || '',
-        description: asset?.description || '',
+        altText_de: asset?.altText_de || '',
+        altText_en: asset?.altText_en || '',
+        description_de: asset?.description_de || '',
+        description_en: asset?.description_en || '',
         originalFilename: asset?.originalFilename || '',
         opt: {media: {tags: assetTagOptions}},
         title: asset?.title || ''
@@ -323,24 +325,43 @@ const DialogAssetEdit = (props: Props) => {
                           name="title"
                           value={currentAsset?.title}
                         />
-                        {/* Alt text */}
+                        {/* Alt text de */}
                         <FormFieldInputText
-                          {...register('altText')}
+                          {...register('altText_de')}
                           disabled={formUpdating}
-                          error={errors?.altText?.message}
-                          label="Alt Text"
-                          name="altText"
-                          value={currentAsset?.altText}
+                          error={errors?.altText_de?.message}
+                          label="Alt Text DE"
+                          name="altText_de"
+                          value={currentAsset?.altText_de}
                         />
-                        {/* Description */}
-                        <FormFieldInputTextarea
-                          {...register('description')}
+                        {/* Alt text en */}
+                        <FormFieldInputText
+                          {...register('altText_en')}
                           disabled={formUpdating}
-                          error={errors?.description?.message}
-                          label="Description"
-                          name="description"
+                          error={errors?.altText_en?.message}
+                          label="Alt Text EN"
+                          name="altText_en"
+                          value={currentAsset?.altText_en}
+                        />
+                        {/* Description de */}
+                        <FormFieldInputTextarea
+                          {...register('description_de')}
+                          disabled={formUpdating}
+                          error={errors?.description_de?.message}
+                          label="Description DE"
+                          name="description_de"
                           rows={5}
                           value={currentAsset?.description}
+                        />
+                        {/* Description en */}
+                        <FormFieldInputTextarea
+                          {...register('description_en')}
+                          disabled={formUpdating}
+                          error={errors?.description_en?.message}
+                          label="Description DE"
+                          name="description_en"
+                          rows={5}
+                          value={currentAsset?.description_en}
                         />
                       </Stack>
                     </TabPanel>

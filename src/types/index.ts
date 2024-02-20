@@ -11,8 +11,10 @@ import {assetFormSchema, tagFormSchema, tagOptionSchema} from '../formSchema'
 import {RootReducerState} from '../modules/types'
 
 type CustomFields = {
-  altText?: string
-  description?: string
+  altText_de?: string
+  altText_en?: string
+  description_de?: string
+  description_en?: string
   opt?: {
     media?: {
       tags?: SanityReference[]
@@ -233,8 +235,10 @@ export type SearchFacetInputStringProps = SearchFacetInputCommon & {
 }
 
 export type SearchFacetName =
-  | 'altText'
-  | 'description'
+  | 'altText_de'
+  | 'altText_en'
+  | 'description_de'
+  | 'description_en'
   | 'fileName'
   | 'height'
   | 'inCurrentDocument'

@@ -9,20 +9,40 @@ import groq from 'groq'
 export const divider: SearchFacetDivider = {type: 'divider'}
 
 export const inputs: Record<SearchFacetName, SearchFacetInputProps> = {
-  altText: {
+  altText_de: {
     assetTypes: ['file', 'image'],
-    field: 'altText',
-    name: 'altText',
+    field: 'altText_de',
+    name: 'altText_de',
     operatorType: 'empty',
     operatorTypes: ['empty', 'notEmpty', null, 'includes', 'doesNotInclude'],
     title: 'Alt text',
     type: 'string',
     value: ''
   },
-  description: {
+  altText_en: {
     assetTypes: ['file', 'image'],
-    field: 'description',
-    name: 'description',
+    field: 'altText_en',
+    name: 'altText_en',
+    operatorType: 'empty',
+    operatorTypes: ['empty', 'notEmpty', null, 'includes', 'doesNotInclude'],
+    title: 'Alt text',
+    type: 'string',
+    value: ''
+  },
+  description_de: {
+    assetTypes: ['file', 'image'],
+    field: 'description_de',
+    name: 'description_de',
+    operatorType: 'empty',
+    operatorTypes: ['empty', 'notEmpty', null, 'includes', 'doesNotInclude'],
+    title: 'Description',
+    type: 'string',
+    value: ''
+  },
+  description_en: {
+    assetTypes: ['file', 'image'],
+    field: 'description_en',
+    name: 'description_en',
     operatorType: 'empty',
     operatorTypes: ['empty', 'notEmpty', null, 'includes', 'doesNotInclude'],
     title: 'Description',
